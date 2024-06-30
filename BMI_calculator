@@ -1,6 +1,14 @@
-# #calculate BMI
-print("Welcome to the BMI calculator!")
-height = input("Enter your height in m:\n")
-weight = input("Enter your weight in kg:\n")
-BMI = int(weight)/float(height)**2
-print(f"Your BMI is {int(BMI)}")
+#BMI calculator improved
+height = float(input("Enter your height in meters e.g., 1.55:\n"))
+weight = int(input("Enter your weight in kilograms e.g., 72:\n"))
+BMI = float(weight/(height**2))
+if BMI < 18.5:
+  print(f"Your BMI is {BMI}, you are underweight.")
+elif BMI < 25:
+  print(f"Your BMI is {BMI}, you have a normal weight.")
+elif BMI < 30:
+  print(f"Your BMI is {BMI}, you are slightly overweight.")
+elif BMI < 35:
+  print(f"Your BMI is {BMI}, you are obese.")
+else:
+  print(f"Your BMI is {BMI}, you are clinically obese.")
