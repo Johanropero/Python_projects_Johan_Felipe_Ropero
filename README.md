@@ -8,6 +8,6 @@ Feel free to explore the code and reach out if you have any questions or feedbac
 - Project 1: BMI_Calculator
 - Project 2: Tip_Calculator
 - Project 3: Weeks_Remaining
-
+- Project 4: Minimum_Height
 ## Connect with Me
 - [LinkedIn](https://www.linkedin.com/in/johan-felipe-ropero-03a9b3141/)
