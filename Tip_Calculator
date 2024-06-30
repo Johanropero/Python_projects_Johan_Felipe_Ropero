@@ -1,0 +1,7 @@
+#This code is used to calculate the total amount to pay depending on the percentage of the tip and also the amount of people to split it with
+print("Welcome to the tip calculator!")
+Total = float(input("What was the total bill?\n$"))
+Tip = int(input("How much tip would you like to give? 10, 12, or 15?\n"))
+Split = int(input("How many people to split the bill?\n"))
+Final_amount = round((Total/Split)*(1+(Tip/100)), 2)
+print (f"Each person should pay :\n${Final_amount}")
