@@ -1,0 +1,8 @@
+# # #calculate how many days, weeks, months you have left if you live until 90 years old
+print("Welcome to the Weeks Left to Live Calculator!")
+age = int(input("Please let us know how old are you?\n"))
+Weeks_in_a_year = 52
+total_weeks_so_far = (int(Weeks_in_a_year * age))
+Weeks_remaining = (int(90*Weeks_in_a_year))-(int(total_weeks_so_far))
+
+print(f"You have {Weeks_remaining} weeks left, enjoy it.")
