@@ -8,4 +8,4 @@ if height >= 120:
   else:
     print("Please pay $12.")
 else:
-  print(f"Since your height is {height} cms, you are not allowed to ride the rollercoaster.Sorry you have to grow taller before you can ride.")
+  print(f"Since your height is {height} cms, you are not allowed to ride the rollercoaster.Sorry, you have to grow taller before you can ride.")
