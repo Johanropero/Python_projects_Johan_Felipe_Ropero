@@ -1,3 +1,4 @@
+from replit import clear
 zero = '''
     +----+
     |    |
@@ -84,6 +85,7 @@ word_list = [
     "sapphire", "tornado", "voyage", "whisper", "zephyr"]
 
 chosen_word = random.choice(word_list)
+guessed_letters = []
 display = []
 for letter in chosen_word:
     display += "_"
@@ -91,6 +93,14 @@ print(stages[0])
 
 while lives > 0:
     guess = input("\nGuess a letter : ").lower()
+    clear()
+    if guess in guessed_letters:
+        print(f"You've already guessed the letter {guess}. Try a different letter.")
+        continue
+    else:
+        guessed_letters.append(guess)
+
+    guessed_correctly = False
     guessed_correctly = False
 
     for position in range(len(chosen_word)):
@@ -98,17 +108,22 @@ while lives > 0:
         if letter == guess:
             display[position] = letter
             guessed_correctly = True
-            
     if not guessed_correctly:
         lives -= 1
+        if lives == 0:
+            print(f"\nYou've lost the game! The word was '{chosen_word}'.")
         print(f"\nLetter {guess} is not part of the word.You lost a life. You have {lives} lives remaining.")
         print(stages[7 - lives])
-    else:
         print("".join(display))
-
+    else:
+        print(f"\nYou have guessed letter {guess.capitalize()}. Keep going!")
+        print(stages[7 - lives])
+        print("".join(display))
+        
     if "_" not in display:
         print("\nCongratulations! You've guessed the word correctly.")
         break
 else:
     print(f"\nYou've lost the game! The word was '{chosen_word}'.")
-    print(stages[7]
+    print(stages[7])
+    
