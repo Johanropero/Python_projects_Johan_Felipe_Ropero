@@ -1,0 +1,114 @@
+zero = '''
+    +----+
+    |    |
+         |
+         |
+         |
+         |
+============
+'''
+first = '''
+    +----+
+    |    |
+    O    |
+         |
+         |
+         |
+============'''
+second = '''
+    +----+
+    |    |
+    O    |
+    |    |
+         |
+         |
+============'''
+third = '''
+    +----+
+    |    |
+    O    |
+    |    |
+         |
+         |
+============
+'''
+fourth = '''
+    +----+
+    |    |
+    O    |
+   /|    |
+         |
+         |
+============
+'''
+fifth = '''
+    +----+
+    |    |
+    O    |
+   /|\   |
+         |
+         |
+============
+'''
+sixth = '''
+    +----+
+    |    |
+    O    |
+   /|\   |
+   /     |
+         |
+============
+'''
+seventh = '''
+    +----+
+    |    |
+    O    |
+   /|\   |
+   / \   |
+         |
+============
+'''
+stages = [zero, first, second, third, fourth, fifth, sixth, seventh]
+
+print("Welcome to the hangman game!")
+print("You have 7 lives to guess the word.")
+print("Good luck!")
+lives = 7
+import random
+word_list = [
+    "umbrella", "piano", "whale", "diamond", "gallery",
+    "kitchen", "mountain", "sword", "violet", "raven",
+    "jacket", "horizon", "silence", "planet", "cobra",
+    "castle", "breeze", "elephant", "drift", "fossil",
+    "guitar", "lantern", "meadow", "orchard", "quartz",
+    "sapphire", "tornado", "voyage", "whisper", "zephyr"]
+
+chosen_word = random.choice(word_list)
+display = []
+for letter in chosen_word:
+    display += "_"
+print(stages[0])
+
+while lives > 0:
+    guess = input("\nGuess a letter : ").lower()
+    guessed_correctly = False
+
+    for position in range(len(chosen_word)):
+        letter = chosen_word[position]
+        if letter == guess:
+            display[position] = letter
+            guessed_correctly = True
+            
+    if not guessed_correctly:
+        lives -= 1
+        print(f"\nLetter {guess} is not part of the word.You lost a life. You have {lives} lives remaining.")
+        print(stages[7 - lives])
+    else:
+        print("".join(display))
+
+    if "_" not in display:
+        print("\nCongratulations! You've guessed the word correctly.")
+        break
+else:
+    print(f"\nYou've lost the game! The word was '{chosen_word}'.")
+    print(stages[7]
